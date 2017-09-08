@@ -166,6 +166,6 @@ http://creativecommons.org/publicdomain/zero/1.0/
     </group>
 
     <!-- Hashing with Keccak-800 on ARMv6M only -->
-    <target name="hash-800-ARMv6M.a" inherits="KeccakSpongeWidth800 optimized800ARMv6Mu1"/>
+    <target name="hash-800-ARMv6M.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ARMv6Mu1"/>
 
 </build>

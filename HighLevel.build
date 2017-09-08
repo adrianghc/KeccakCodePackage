@@ -20,6 +20,7 @@ The fragments below allow to select the desired cryptographic functions (a.k.a. 
 
 * KeccakSpongeWidth{200, 400, 800, 1600}: the Keccak[r, c] sponge function, where r+c equals the given permutation width (200, 400, 800 or 1600).
 * KeccakSponge: the Keccak sponge functions for all widths.
+* KeccakHash800: the Keccak hash implementation for a width of 800 bits
 * FIPS202: all the functions approved in the FIPS 202 standard, i.e., the extendable output functions (SHAKE{128, 256}) and hash functions (SHA3-{224, 256, 384, 512}). This includes also the Keccak hash functions without suffix (e.g., such as Keccak[r=1088, c=512] as used in Ethereum).
 * SP800-185: all the functions defined in the NIST SP 800-185 standard, i.e., cSHAKE, TupleHash, KMAC and ParallelHash.
 * KeccakDuplexWidth{200, 400, 800, 1600}: the Keccak[r, c] duplex objects, where r+c equals the given permutation width (200, 400, 800 or 1600).
@@ -60,6 +61,12 @@ The fragments below allow to select the desired cryptographic functions (a.k.a. 
     </fragment>
 
     <fragment name="KeccakSponge" inherits="KeccakSpongeWidth200 KeccakSpongeWidth400 KeccakSpongeWidth800 KeccakSpongeWidth1600"/>
+	
+	<!-- Custom -->
+	<fragment name="KeccakHash800">
+		<c>Modes/KeccakHash800.c</c>
+		<c>Modes/KeccakHash800.h</c>
+	</fragment>
 
     <!-- NIST standards -->
 
