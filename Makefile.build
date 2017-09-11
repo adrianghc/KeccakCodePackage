@@ -17,6 +17,7 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
     <xi:include href="HighLevel.build"/>
     <xi:include href="LowLevel.build"/>
+    <xi:include href="CompilerFlags.build"/>
     <xi:include href="Ketje/Ketje.build"/>
     <xi:include href="Keyak/Keyak.build"/>
     <xi:include href="HOWTO-customize.build"/>
@@ -169,10 +170,11 @@ http://creativecommons.org/publicdomain/zero/1.0/
         </product>
     </group>
 
-    <!-- Hashing with Keccak-800 on ARMv6M only -->
-    <target name="hash-800-ARMv6M.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ARMv6Mu1"/>
+    <!-- Hashing with Keccak-800 -->
+    <target name="KeccakHash800ARMv6M.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ARMv6Mu1"/>
+    <target name="KeccakHash800Native.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ufull"/>
 
-    <!-- x86-64 Command line application to hash strings with Keccak-800 for testing purposes -->
-    <target name="hash-800" inherits="KeccakHash800Application KeccakSpongeWidth800 KeccakHash800 optimized800u2"/>
+    <!-- Command line application to hash strings with Keccak-800 for testing purposes -->
+    <target name="KeccakHash800ApplicationNative" inherits="KeccakHash800Application KeccakSpongeWidth800 KeccakHash800 optimized800u2"/>
 
 </build>

@@ -114,16 +114,6 @@ The fragments below allow to select the desired implementation of the permutatio
 
     <!-- *** Low-level services *** -->
 
-    <fragment name="optimized">
-        <h>Common/brg_endian.h</h>
-        <gcc>-fomit-frame-pointer</gcc>
-        <gcc>-O2</gcc>
-        <gcc>-g0</gcc>
-        <gcc>-march=armv6-m</gcc>
-        <gcc>-mtune=cortex-m0</gcc>
-        <gcc>-mthumb</gcc>
-    </fragment>
-
     <!-- Keccak-p[200] -->
 
     <fragment name="width200">
