@@ -48,7 +48,7 @@ typedef struct {
   *                         This is a byte containing from 0 to 7 bits
   *                         formatted like the @a delimitedData parameter of
   *                         the Keccak_SpongeAbsorbLastFewBits() function.
-  * @pre    One must have r+c=1600 and the rate a multiple of 8 bits in this implementation.
+  * @pre    One must have r+c=800 and the rate a multiple of 8 bits in this implementation.
   * @return SUCCESS if successful, FAIL otherwise.
   */
 HashReturn Keccak_HashInitialize(Keccak_HashInstance *hashInstance, unsigned int rate, unsigned int capacity, unsigned int hashbitlen, unsigned char delimitedSuffix);
