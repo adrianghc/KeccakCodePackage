@@ -30,6 +30,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
     <!-- *** Utilities *** -->
 
+    <fragment name="KeccakHash800Application">
+        <c>Applications/KeccakHash800.c</c>
+    </fragment>
+
     <!-- To run many tests -->
     <fragment name="KeccakTests" inherits="All">
         <c>Tests/main.c</c>
@@ -167,5 +171,8 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
     <!-- Hashing with Keccak-800 on ARMv6M only -->
     <target name="hash-800-ARMv6M.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ARMv6Mu1"/>
+
+    <!-- x86-64 Command line application to hash strings with Keccak-800 for testing purposes -->
+    <target name="hash-800" inherits="KeccakHash800Application KeccakSpongeWidth800 KeccakHash800 optimized800u2"/>
 
 </build>
