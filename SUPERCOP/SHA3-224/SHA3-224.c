@@ -13,12 +13,13 @@ and related or neighboring rights to the source code in this file.
 http://creativecommons.org/publicdomain/zero/1.0/
 */
 
-#include "KangarooTwelve.h"
-#include "KeccakDuplex.h"
-#include "KeccakHash.h"
-#include "KeccakSponge.h"
-#include "Ketjev2.h"
-#include "Keyakv2.h"
-#include "Kravatte.h"
-#include "KravatteModes.h"
-#include "SimpleFIPS202.h"
+#include "crypto_hash.h"
+#ifndef crypto_hash_BYTES
+    #define crypto_hash_BYTES 28
+#endif
+#include "KeccakSpongeWidth1600.h"
+
+int crypto_hash( unsigned char *out, const unsigned char *in, unsigned long long inlen )
+{
+    return KeccakWidth1600_Sponge(1152, 448, in, inlen, 0x06, out, crypto_hash_BYTES);
+}
