@@ -32,8 +32,8 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
     <!-- *** Utilities *** -->
 
-    <fragment name="KeccakHash800Application">
-        <c>Applications/KeccakHash800.c</c>
+    <fragment name="KeccakHash800Application" inherits="KeccakHash800">
+        <c>Applications/KeccakHashApplication800.c</c>
     </fragment>
 
     <!-- To run many tests -->
@@ -172,10 +172,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
     </group>
 
     <!-- Hashing with Keccak-800 -->
-    <target name="KeccakHash800ARMv6M.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ARMv6Mu1"/>
-    <target name="KeccakHash800Native.a" inherits="KeccakSpongeWidth800 KeccakHash800 optimized800ufull"/>
+    <target name="KeccakHash800ARMv6M.a" inherits="KeccakHash800 optimized800ARMv6Mu1"/>
+    <target name="KeccakHash800Native.a" inherits="KeccakHash800 optimized800ufull"/>
 
     <!-- Command line application to hash strings with Keccak-800 for testing purposes -->
-    <target name="KeccakHash800ApplicationNative" inherits="KeccakHash800Application KeccakSpongeWidth800 KeccakHash800 optimized800u2"/>
+    <target name="KeccakHash800ApplicationNative" inherits="KeccakHash800Application optimized800ufull"/>
 
 </build>
