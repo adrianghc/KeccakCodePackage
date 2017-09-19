@@ -22,10 +22,10 @@ int main(int argc, char* argv[]) {
     BitSequence hashval[hashbitlen / 8];
 
     int rate = 480;
-    unsigned char delimitedSuffix = '0';
+    unsigned char delimitedSuffix = '\1';
     
-    BitLength databitlen = 10;
-    char* datastring = "0123456789";
+    BitLength databitlen = 80;
+    char datastring[] = "0123456789";
     BitSequence* data = (unsigned char*) datastring;
 
     int c;
@@ -41,14 +41,14 @@ int main(int argc, char* argv[]) {
                 delimitedSuffix = optarg[0];
                 break;
             case 's':
-                datastring = optarg;
-                databitlen = strlen(datastring);
+                data = (unsigned char*) optarg;
+                databitlen = 8 * strlen(optarg);
                 break;
         }
     }
 
     keccak_hash(&hashInstance, hashval, rate, 800-rate, hashbitlen, delimitedSuffix, data, databitlen);
-    printf("Hash calculated for rate = %d, capacity = %d, hash length = %d, delimited suffix = %c and string = %s\n", rate, 800-rate, hashbitlen, delimitedSuffix, datastring);
+    printf("Hash calculated for rate = %d, capacity = %d, hash length = %d, delimited suffix = %02x and string = %s\n", rate, 800-rate, hashbitlen, delimitedSuffix, data);
     printf("The hash is ");
     for (int i=0; i<hashbitlen/8; i++) {
         printf("%02x", hashval[i]);
