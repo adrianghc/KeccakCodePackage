@@ -16,19 +16,20 @@ void keccak_hash(Keccak_HashInstance* hashInstance, BitSequence* hashval, int ra
 
 int main(int argc, char* argv[]) {
 
+    int hashbitlen = 256;
+
     Keccak_HashInstance hashInstance;
-    BitSequence hashval[32];
+    BitSequence hashval[hashbitlen / 8];
 
     int rate = 480;
-    int hashbitlen = 256;
-    unsigned char delimitedSuffix = '\0';
+    unsigned char delimitedSuffix = '0';
     
     BitLength databitlen = 10;
     char* datastring = "0123456789";
     BitSequence* data = (unsigned char*) datastring;
 
     int c;
-    while ((c == getopt(argc, argv, "rhds")) != -1) {
+    while ((c = getopt(argc, argv, "r:h:d:s:")) != -1) {
         switch (c) {
             case 'r':
                 rate = atoi(optarg);
@@ -48,7 +49,11 @@ int main(int argc, char* argv[]) {
 
     keccak_hash(&hashInstance, hashval, rate, 800-rate, hashbitlen, delimitedSuffix, data, databitlen);
     printf("Hash calculated for rate = %d, capacity = %d, hash length = %d, delimited suffix = %c and string = %s\n", rate, 800-rate, hashbitlen, delimitedSuffix, datastring);
-    printf("The hash is %s\n", hashval);
+    printf("The hash is ");
+    for (int i=0; i<hashbitlen/8; i++) {
+        printf("%02x", hashval[i]);
+    }
+    printf("\n");
 
     return 0;
 
