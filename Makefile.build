@@ -173,6 +173,7 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
     <!-- Hashing with Keccak-800 -->
     <target name="KeccakHash800ARMv6M.a" inherits="KeccakHash800 optimized800ARMv6Mu1"/>
+    <target name="KeccakHash800ARMv7M.a" inherits="KeccakHash800 optimized800ARMv7Mu2"/>
     <target name="KeccakHash800Native.a" inherits="KeccakHash800 optimized800ufull"/>
 
     <!-- Command line application to hash strings with Keccak-800 for testing purposes -->
