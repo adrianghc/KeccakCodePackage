@@ -20,7 +20,7 @@ http://creativecommons.org/publicdomain/zero/1.0/
         <gcc>-fomit-frame-pointer</gcc>
         <gcc>-O2</gcc>
         <gcc>-g0</gcc>
-        <gcc>-march=armv7-m</gcc>
+        <gcc>-march=armv7e-m</gcc>
         <gcc>-mtune=cortex-m4</gcc>
         <gcc>-mthumb</gcc>
     </fragment>
