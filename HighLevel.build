@@ -61,7 +61,7 @@ The fragments below allow to select the desired cryptographic functions (a.k.a. 
     </fragment>
 
     <fragment name="KeccakSponge" inherits="KeccakSpongeWidth200 KeccakSpongeWidth400 KeccakSpongeWidth800 KeccakSpongeWidth1600"/>
-	
+
 	<!-- Custom -->
 	<fragment name="KeccakHash800" inherits="KeccakSpongeWidth800">
 		<c>Modes/KeccakHash800.c</c>
