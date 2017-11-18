@@ -68,6 +68,11 @@ The fragments below allow to select the desired cryptographic functions (a.k.a. 
 		<h>Modes/KeccakHash800.h</h>
 	</fragment>
 
+    <fragment name="KeccakHash1600" inherits="KeccakSpongeWidth1600">
+		<c>Modes/KeccakHash.c</c>
+		<h>Modes/KeccakHash.h</h>
+	</fragment>
+
     <!-- NIST standards -->
 
     <fragment name="FIPS202" inherits="KeccakSpongeWidth1600">

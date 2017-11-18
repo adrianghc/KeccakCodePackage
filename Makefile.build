@@ -36,6 +36,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
         <c>Applications/KeccakHashApplication800.c</c>
     </fragment>
 
+    <fragment name="KeccakHash1600Application" inherits="KeccakHash1600">
+        <c>Applications/KeccakHashApplication1600.c</c>
+    </fragment>
+
     <!-- To run many tests -->
     <fragment name="KeccakTests" inherits="All">
         <c>Tests/main.c</c>
@@ -178,5 +182,7 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
     <!-- Command line application to hash strings with Keccak-800 for testing purposes -->
     <target name="KeccakHash800ApplicationNative" inherits="KeccakHash800Application optimized800ufull"/>
+    <!-- Command line application to hash strings with Keccak-1600 for testing purposes -->
+    <target name="KeccakHash1600ApplicationNative" inherits="KeccakHash1600Application optimized1600ufull"/>
 
 </build>
