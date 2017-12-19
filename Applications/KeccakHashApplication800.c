@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
                 hashbitlen = atoi(optarg);
                 break;
             case 'd':
-                delimitedSuffix = optarg[0];
+                delimitedSuffix = atoi(optarg);
                 break;
             case 's':
                 data = (unsigned char*) optarg;
